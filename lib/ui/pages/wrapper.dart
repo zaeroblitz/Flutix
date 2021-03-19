@@ -69,7 +69,10 @@ class Wrapper extends StatelessWidget {
                                                                             .pageEvent)
                                                                         : (pageState
                                                                                 is OnWalletPage)
-                                                                            ? WalletPage(pageState.pageEvent)
-                                                                            : MainPage());
+                                                                            ? WalletPage(pageState
+                                                                                .pageEvent)
+                                                                            : MainPage(
+                                                                                bottomNavBarIndex: (pageState as OnMainPage).bottomNavBarIndex,
+                                                                                isExpired: (pageState as OnMainPage).isExpired));
   }
 }

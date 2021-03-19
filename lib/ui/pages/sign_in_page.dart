@@ -152,10 +152,17 @@ class _MyAppState extends State<SignInPage> {
                           style: greyTextFont.copyWith(
                               fontSize: 14, fontWeight: FontWeight.w400),
                         ),
-                        Text('Sign Up',
-                            style: purpleTextFont.copyWith(
-                              fontSize: 14,
-                            )),
+                        GestureDetector(
+                          onTap: () async {
+                            context
+                                .bloc<PageBloc>()
+                                .add(GoToRegistrationPage(RegistrationData()));
+                          },
+                          child: Text('Sign Up',
+                              style: purpleTextFont.copyWith(
+                                fontSize: 14,
+                              )),
+                        ),
                       ],
                     ),
                   ])

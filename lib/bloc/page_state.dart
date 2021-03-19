@@ -23,7 +23,7 @@ class OnMainPage extends PageState {
   final int bottomNavBarIndex;
   final bool isExpired;
 
-  OnMainPage({this.bottomNavBarIndex, this.isExpired});
+  OnMainPage({this.bottomNavBarIndex = 0, this.isExpired = false});
 
   @override
   List<Object> get props => [bottomNavBarIndex, isExpired];

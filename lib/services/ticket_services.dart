@@ -9,16 +9,16 @@ class TicketServices {
       'movieID': ticket.movieDetail.id,
       'userID': id ?? '',
       'theaterName': ticket.theater.name,
-      'time': ticket.dateTime.microsecondsSinceEpoch ??
-          DateTime.now().microsecondsSinceEpoch,
+      'time': ticket.dateTime.millisecondsSinceEpoch ??
+          DateTime.now().millisecondsSinceEpoch,
       'bookingCode': ticket.bookingCode,
       'seats': ticket.seatsInString,
       'name': ticket.name,
       'totalPrice': ticket.totalPrice,
       'movieID_time': ticket.movieDetail.id +
               000 +
-              ticket.dateTime.microsecondsSinceEpoch ??
-          DateTime.now().microsecondsSinceEpoch
+              ticket.dateTime.millisecondsSinceEpoch ??
+          DateTime.now().millisecondsSinceEpoch
     });
   }
 
@@ -34,7 +34,7 @@ class TicketServices {
       tickets.add(Ticket(
           movieDetail,
           Theater(document.data['theaterName']),
-          DateTime.fromMicrosecondsSinceEpoch(document.data['time']),
+          DateTime.fromMillisecondsSinceEpoch(document.data['time']),
           document.data['bookingCode'],
           document.data['seats'].toString().split(','),
           document.data['name'],
